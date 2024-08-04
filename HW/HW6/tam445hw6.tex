@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[all]{xy}
+
+
+\usepackage{hyperref}
+\usepackage{amsmath,amsthm,amssymb,color,latexsym}
+\usepackage{geometry}        
+\geometry{letterpaper}    
+\usepackage{graphicx}
+\usepackage[shortlabels]{enumitem}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{.75\columnwidth}
+    \import{./Figures/}{#1.pdf_tex}
+}
+
+\newtheorem{problem}{Problem}
+
+\newenvironment{solution}[1][\it{Solution}]{\textbf{#1. } }{$\square$}
+
+
+\begin{document}
+\noindent TAM 445: Continuum Mechanics 2024\hfill HW 6\\
+Jerich Lee. (03/8)
+
+\hrulefill
+\input{problem1.tex}
+\input{problem2.tex}
+\input{problem3.tex}
+\pagebreak
+\input{problem4.tex}
+\input{problem5.tex}
+\pagebreak
+\input{problem6.tex}
+
+\end{document}
+

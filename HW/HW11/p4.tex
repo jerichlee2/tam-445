@@ -1,0 +1,80 @@
+\begin{problem}
+    \noindent
+    \normalfont
+
+   \begin{enumerate}
+    \item
+\begin{align}
+\mathbf{T}_{s}(\mathbf{x},t)=\rho \frac{ \partial \psi }{ \partial \mathbf{F} } \mathbf{F}^{\text{T}}\rvert_{\mathbf{X}=f^{-1}(\mathbf{X},t)} \\
+\psi(\mathbf{F})=\psi(\mathbf{Q}\mathbf{F}), \ \mathbf{Q}\in \text{Orth} \\
+\mathbf{F}=\mathbf{RU} \\
+\psi(\mathbf{QRU})=\psi(\mathbf{F})  \\
+\end{align}
+
+
+Choosing $\mathbf{Q}=\mathbf{R}^{\text{T}}$:
+
+\begin{align}
+\psi(\mathbf{U})=\psi(\mathbf{F}) \\
+\mathbf{U}=\mathbf{F^{\text{T}}F}=\mathbf{C} \\
+\therefore\psi(\mathbf{F})=\psi(\mathbf{C})
+\end{align}
+\item 
+\begin{align}
+\mathbf{T}=\rho_{s}\frac{ \partial \psi }{ \partial \mathbf{F} } \mathbf{F}^{\text{T}} \\
+\mathbf{T}_{ij}=\rho_{s}\frac{ \partial \bar{\bar{\psi}} }{ \partial \mathbf{C}_{LM} } (\mathbf{F}^{\text{T}})_{Kj} \\
+\mathbf{C}=\mathbf{F}^\text{{T}}\mathbf{F}\iff \mathbf{C}_{LM}\mathbf{F}_{PL}\mathbf{F}_{PM} \\
+\frac{ \partial \mathbf{C}_{LM} }{ \partial \mathbf{F}_{iK} } =\frac{ \partial \mathbf{F_{pL}} }{ \partial \mathbf{F}_{iK} } \mathbf{F}_{PM}+\mathbf{F}_{pL}\frac{ \partial \mathbf{F}_{PM} }{ \partial \mathbf{F}_{iK} }  \\
+=\delta_{iP}\delta_{KL}\mathbf{F}_{PM}+\mathbf{F}_{PL}\delta_{iP}\delta_{KM} \\
+=\mathbf{F}_{iM}\delta_{KL}+\mathbf{F}_{iL}\delta_{KM} \\
+\therefore \mathbf{T}_{ij}=\rho_{s}\left[ \frac{ \partial \bar{\bar{\psi}} }{ \partial \mathbf{C}_{KM} }  \mathbf{F}_{iM}\mathbf{F}_{jk}+\frac{ \partial \bar{\bar{\psi}} }{ \partial \mathbf{C}_{LK} }\mathbf{F}_{iL}\mathbf{F}_{jk} \right] \\
+=2\rho_{s}\mathbf{F}_{iM}\left( \frac{ \partial \bar{\bar{\psi}} }{ \partial \mathbf{C} }  \right)_{KM}\mathbf{F}^{\text{T}}_{Kj} \\
+\end{align}
+\boxedeq{}{\mathbf{T}=2\rho_{s}\mathbf{F}\frac{ \partial \bar{\bar{\psi}} }{ \partial C } \mathbf{F}^{\text{T}}
+}
+\item 
+
+\begin{align}
+\bar{\psi}(\mathbf{C})=\bar{\bar{\psi}}(I_{1}(\mathbf{C}),\ I_{2}(\mathbf{C}),\ I_{3}(\mathbf{C})) \\
+\mathbf{C}=\mathbf{F}^{\text{T}}\mathbf{F} \\
+=(\mathbf{V}\mathbf{R})^{\text{T}}(\mathbf{V}\mathbf{R}) \\
+=\mathbf{R}^{\text{T}}\mathbf{B}\mathbf{R}
+\end{align}
+
+We can use $\mathbf{B}$ instead of $\mathbf{C}$ because the invariants of $\mathbf{C}$ are the same as the invariants of $\mathbf{B}$.
+Therefore, we can use $\bar{\bar{\psi}}(I_{1}(\mathbf{B}),\ I_{2}(\mathbf{B}),\ I_{3}(\mathbf{B}))$
+
+
+\begin{align}
+\mathbf{T}=\rho_{s}\frac{ \partial \psi }{ \partial \mathbf{F} } \mathbf{F}^{\text{T}} \\
+\mathbf{T}_{ij}=\rho_{s}\frac{ \partial \bar{\bar{\psi}} }{ \partial \mathbf{B}_{pq} } \frac{ \partial \mathbf{B}_{pq} }{ \partial \mathbf{F}_{iL} } (\mathbf{F}^{\text{T}})_{bj} \\
+\end{align}
+
+
+Simplifying each term in the equation above:
+
+
+\begin{align}
+\frac{ \partial \mathbf{B}_{pq} }{ \partial \mathbf{F}_{iL} }=\frac{ \partial \bar{\bar{\psi}} }{ \partial I_{l} (\mathbf{B})}\frac{ \partial I_{l}(\mathbf{B}) }{ \partial \mathbf{\mathbf{B}}_{pq} }   \\
+=\delta_{ip}\mathbf{F}_{qL}+\delta_{iq}\mathbf{F}_{PL}
+\end{align}
+
+\begin{align}
+\rho_{s}\frac{ \partial \bar{\bar{\psi}} }{ \partial \mathbf{B}_{pq} }=\begin{cases}
+\frac{ \partial I_{1} }{ \partial \mathbf{B}_{pq} } =\delta_{pq} \\
+\frac{ \partial I_{2} }{ \partial \mathbf{B}_{pq} } =I_{1}\delta_{pq}-\mathbf{B}_{pq} \\
+\frac{ \partial I_{3} }{ \partial \mathbf{B}_{pq} } =I_{3}\mathbf{B}_{qp}^{-1}
+\end{cases}
+\end{align}
+
+
+\begin{align}
+\therefore \mathbf{T}_{ij}&=\rho_{s}\left[ 2\frac{ \partial \bar{\bar{\psi}} }{ \partial I_{1} }  \mathbf{F}_{iL}\mathbf{F}_{Lj}^{\text{T}}+2\frac{ \partial \bar{\bar{\psi}} }{ \partial I_{2} }(I_{1}(\mathbf{B})\mathbf{F}_{iL}\mathbf{F}^{\text{T}}_{Lj}-\mathbf{B}_{iq}\mathbf{F}_{qL}\mathbf{F}_{Lj}^{\text{T}})+\frac{ \partial \bar{\bar{\psi}} }{ \partial I_{3} }I_{3}(\mathbf{B})\underbrace{ (\mathbf{B}^{\text{-1}}_{qi}\mathbf{F}_{qL}+\mathbf{B}_{pi}^{-1}\mathbf{F}_{pL})\mathbf{F}^{\text{T}}_{Lj} }_{ 2(\mathbf{B}^{\text{T}}\mathbf{B})_{ij}=2\mathbf{I}(\mathbf{B}\in \text{Psym}) }\right] \\
+&=\eta_{0}\mathbf{I}+\eta_{2}\mathbf{B}+\eta_{2}\mathbf{\mathbf{B}}^2
+\end{align}
+
+
+Where $\eta_{i}(I_{1}(\mathbf{B}), \ I_{2}(\mathbf{B}), \ I_{3}(\mathbf{B})$.
+
+   \end{enumerate} 
+\end{problem}

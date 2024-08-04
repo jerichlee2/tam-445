@@ -1,0 +1,359 @@
+\begin{problem}
+\normalfont
+Compute the polar decompositions $
+    \mathbf{T}=\mathbf{R}\mathbf{U}=\mathbf{V}\mathbf{R}
+    $
+    where $\mathbf{U},\mathbf{V} \in \text{Psym}$ and $\mathbf{R}\in \text{Orth}$, or a tensor $\mathbf{T}$ whose components are given by
+    
+    $$
+    \begin{bmatrix}
+    \sqrt{ 3 } & 1 & 0 \\
+    0 & 2 & 0 \\
+    0 & 0 & 1
+    \end{bmatrix}
+    $$
+    
+    Write down the eigenvectors and eigenvalues of $\mathbf{U}$ and $\mathbf{V}$, and describe in words the geometric interpretation of the above decompositions.
+\end{problem}
+
+$T^TT$ is found by multiplying the tensor $T$ by its transpose:
+
+
+\begin{align*}
+T^TT&=\begin{bmatrix}
+\sqrt{ 3 } & 0 & 0 \\
+1 & 2 & 0 \\
+0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+\sqrt{ 3 } & 1 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 1
+\end{bmatrix}\\[10pt]
+&=\begin{bmatrix}
+3 & \sqrt{ 3 } & 0 \\
+\sqrt{ 3 } & 5 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\end{align*}
+
+To determine the eigenvalues and the eigenvalues pairs of symmetric tensor $T^TT$, the $\lambda$ values of $\text{det}(T-\lambda I)=0$ are found.
+
+
+\begin{align*}
+\text{det}(T-\lambda I)&=0\\[10pt]
+&=\text{det}\begin{bmatrix}
+3-\lambda & \sqrt{ 3 } & 0 \\
+\sqrt{ 3 } & 5-\lambda & 0 \\
+0 & 0 & 1-\lambda
+\end{bmatrix}\\[10pt]
+&=(3-\lambda)(5-\lambda)(1-\lambda)-\sqrt{ 3 }(\sqrt{ 3 }(1-\lambda))\\[10pt]
+&=-\lambda^3+9\lambda^2-20\lambda+12=0
+\end{align*}
+
+
+Solving the polynomial equation, the following eigenvalues are determined:
+
+$$
+\lambda_{1}=1,\ \lambda_{2}=2,\ \lambda_{3}=6
+$$
+
+The procedure that follows involves determining the eigenvectors for each eigenvalue. 
+
+Substituting $\lambda_{1}$ into $T-\lambda I$:
+
+
+\begin{align*}
+\begin{bmatrix}
+2 & \sqrt{ 3 } & 0 \\
+\sqrt{ 3 } & 4 & 0 \\
+0 & 0 & 0
+\end{bmatrix}\begin{bmatrix}
+v_{1,1} \\
+v_{2,1} \\
+v_{3,1}
+\end{bmatrix}&=\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}
+\end{align*}
+
+
+The nullspace of $T-\lambda_{1}I$ is the space of which the eigenvector that corresponds to eigenvalue $\lambda_{1}$ lives in:
+
+\begin{align*}
+2v_{1,1}+\sqrt{ 3 }v_{1,2}&=0\\[10pt]
+\sqrt{ 3 }v_{1,1}+4v_{1,2}&=0
+\end{align*}
+
+
+Setting our free variable equal to $v_{3}$, we get the following solution for eigenvalue $\lambda_{1}=1$:
+
+$$
+v_{1}=v_{1,3}\begin{bmatrix}
+0 \\
+0 \\
+1
+\end{bmatrix}
+$$
+This procedure is repeated for the remaining two eigenvalues, $\lambda_2$, and $\lambda_{3}$.
+
+For $\lambda_{2}=2$:
+
+$$
+\begin{bmatrix}
+1 & \sqrt{ 3 } & 0 \\
+\sqrt{ 3 } & 3 & 0 \\
+0 & 0 & -1
+\end{bmatrix}\begin{bmatrix}
+v_{2,1} \\
+v_{2,2} \\
+v_{2,3}
+\end{bmatrix}=\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}
+$$
+
+Computing the nullspace of the system above and setting the free variable equal to $v_{2,2}$:
+
+\begin{align*}
+v_{2,1}+\sqrt{ 3 }v_{2,2}&=0\\[10pt]
+\sqrt{ 3 }v_{2,1}+3v_{2,2}&=0\\[10pt]
+-v_{2,3}&=0\\[10pt]
+\bar{v}_{2}&=\begin{bmatrix}
+-\sqrt{ 3}v_{2,2} \\
+v_{2,2} \\
+0
+\end{bmatrix}\\[10pt]
+&=
+v_{2,2}\begin{bmatrix}
+-\sqrt{ 3 } \\
+1 \\
+0
+\end{bmatrix}
+\end{align*}
+
+
+
+
+Substituting $\lambda_{3}$ into $\text{det}(T-\lambda I)$:
+
+\begin{align*}
+\begin{bmatrix}
+-3 & \sqrt{ 3 } & 0 \\
+\sqrt{ 3 } & -1 & 0 \\
+0 & 0 & -5
+\end{bmatrix}\begin{bmatrix}
+v_{3,1} \\
+v_{3,2} \\
+v_{3,3}
+\end{bmatrix}&=
+\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}
+\end{align*}
+
+Computing the nullspace of the above system and setting the free variable equal to $v_{3,2}$:
+
+\begin{align*}
+-3v_{3,1}+\sqrt{ 3 }v_{3,2}&=0\\[10pt]
+\sqrt{ 3 }v_{3,1}-v_{3,2}&=0\\[10pt]
+-5v_{3,3}&=0
+\end{align*}
+
+Solving for the nullspace:
+
+\begin{align*}
+\bar{v}_{3}&=\begin{bmatrix}
+\frac{\sqrt{ 3 }}{3} \\
+1 \\
+0
+\end{bmatrix}
+\end{align*}
+
+
+The eigenvalue and eigenvector pairs are shown below:
+
+$$
+\left( [1,\begin{bmatrix}
+0 \\
+0 \\
+1
+\end{bmatrix}], [2,\begin{bmatrix}
+-\sqrt{ 3 } \\
+1 \\
+0
+\end{bmatrix}],
+\left[ 6,\begin{bmatrix}
+\frac{\sqrt{ 3 }}{3} \\
+0 \\
+1
+\end{bmatrix} \right] \right)
+$$
+
+Our next goal is to determine the polar decomposition $T=RU=VR$, where $U,V\in \text{Psym}$ and $R\in \text{Orth}$. 
+
+$U$ is determined by the definition of the square root theorem, where $\underline{u}_{i}$ are normalized eigenvectors and $\lambda_{i}$ are the eigenvalues that were found in earlier steps:
+
+
+\begin{align*}
+U&=\sum_{i=1}^3 \sqrt{ \lambda_{i} }\underline{u}_{i}\otimes u_{i}\\[10pt]
+&=\sqrt{ 1 }\begin{bmatrix}
+0 \\
+0 \\
+1 \\
+\end{bmatrix}\otimes 
+\begin{bmatrix}
+0 \\
+0 \\
+1
+\end{bmatrix}+\sqrt{ 2 }\begin{bmatrix}
+-\sqrt{ 3 } \\
+1 \\
+0
+\end{bmatrix}\otimes \begin{bmatrix}
+-\sqrt{ 3 } \\
+1 \\
+0
+\end{bmatrix}+\sqrt{ 6 }\begin{bmatrix}
+\frac{\sqrt{ 3 }}{3} \\
+1 \\
+0
+\end{bmatrix}\otimes 
+\begin{bmatrix}
+\frac{\sqrt{ 3 }}{3} \\
+1 \\
+0
+\end{bmatrix}\\[10pt]
+&=\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0  \\
+0 & 0 & 1
+\end{bmatrix}+\sqrt{ 2 }\begin{bmatrix}
+3 & -\sqrt{ 3 } & 0 \\
+-\sqrt{ 3 } & 1 & 0 \\
+0 & 0 & 0
+\end{bmatrix}+\sqrt{ 6 }\begin{bmatrix}
+\frac{1}{3} & \frac{\sqrt{ 3 }}{3} & 0 \\
+\frac{\sqrt{ 3 }}{3} & 1 & 0 \\
+0 & 0 & 0
+\end{bmatrix}\\[10pt]
+U&=\begin{bmatrix}
+\frac{\sqrt{ 6 }}{4}+\frac{3\sqrt{ 2 }}{4} & -\frac{\sqrt{ 6 }}{4}+\frac{3\sqrt{ 2 }}{4} & 0 \\
+-\frac{\sqrt{ 6 }}{4}+\frac{3\sqrt{ 2 }}{4} & \frac{\sqrt{ 2 }}{4}+\frac{3\sqrt{ 6 }}{4} & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\end{align*}
+
+Finding $R$ is straightforward using:
+
+$$
+R=TU^{-1}
+$$
+
+The inverse of $U$ can be found using the following:
+
+\begin{align*}
+U^{-1}&=\frac{1}{\text{det}(U)}\text{adj}(U)\\[10pt]
+&=\begin{bmatrix}
+\frac{\sqrt{ 6 }}{24}+\frac{3\sqrt{ 2 }}{8} & -\frac{\sqrt{ 6 }}{8}+\frac{\sqrt{ 2 }}{8} & 0 \\
+-\frac{\sqrt{ 6 }}{8}+\frac{\sqrt{ 2 }}{8} & \frac{\sqrt{ 2 }}{8}+\frac{\sqrt{ 6 }}{8} & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\end{align*}
+
+Computing $R$:
+
+\begin{align*}
+R&=TU^{-1}\\[10pt]
+&= \begin{bmatrix}
+\sqrt{ 3 } & 1 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+\frac{\sqrt{ 6 }}{24}+\frac{3\sqrt{ 2 }}{8} & -\frac{\sqrt{ 6 }}{8}+\frac{\sqrt{ 2 }}{8} & 0 \\
+-\frac{\sqrt{ 6 }}{8}+\frac{\sqrt{ 2 }}{8} & \frac{\sqrt{ 2 }}{8}+\frac{\sqrt{ 6 }}{8} & 0 \\
+0 & 0 & 1
+\end{bmatrix}\\[10pt]
+R&=\begin{bmatrix}
+\frac{\sqrt{ 2 }}{4}+\frac{\sqrt{ 6 }}{4} & -\frac{\sqrt{ 2 }}{4}+\frac{\sqrt{ 6 }}{4} & 0 \\
+-\frac{\sqrt{ 6 }}{4}+\frac{\sqrt{ 2 }}{4} & \frac{\sqrt{ 2 }}{4}+\frac{\sqrt{ 6 }}{4} & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\end{align*}
+
+Using the definition $V=RUR^T$:
+
+\begin{align*}
+V&=RUR^T\\[10pt]
+&=\begin{bmatrix}
+\frac{\sqrt{ 2 }}{4}+\frac{\sqrt{ 6 }}{4} & -\frac{\sqrt{ 2 }}{4}+\frac{\sqrt{ 6 }}{4} & 0 \\
+-\frac{\sqrt{ 6 }}{4}+\frac{\sqrt{ 2 }}{4} & \frac{\sqrt{ 2 }}{4}+\frac{\sqrt{ 6 }}{4} & 0 \\
+0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+\frac{\sqrt{ 6 }}{4}+\frac{3\sqrt{ 2 }}{4} & -\frac{\sqrt{ 6 }}{4}+\frac{3\sqrt{ 2 }}{4} & 0 \\
+-\frac{\sqrt{ 6 }}{4}+\frac{3\sqrt{ 2 }}{4} & \frac{\sqrt{ 2 }}{4}+\frac{3\sqrt{ 6 }}{4} & 0 \\
+0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+\frac{\sqrt{ 2 }}{4}+\frac{\sqrt{ 6 }}{4} & -\frac{\sqrt{ 6 }}{4}+\frac{\sqrt{ 2 }}{4} & 0 \\
+-\frac{\sqrt{ 2 }}{4}+\frac{\sqrt{ 6 }}{4} & \frac{\sqrt{ 2 }}{4}+\frac{\sqrt{ 6 }}{4} & 0 \\
+0 & 0 & 1
+\end{bmatrix}\\[10pt]
+V&=\begin{bmatrix}
+\frac{\sqrt{ 2 }}{2}+\frac{\sqrt{ 6 }}{2} & -\frac{\sqrt{ 2 }}{2}+\frac{\sqrt{ 6 }}{2} & 0 \\
+-\frac{\sqrt{ 2 }}{2}+\frac{\sqrt{ 6 }}{2} & \frac{\sqrt{ 2 }}{2}+\frac{\sqrt{ 6 }}{2} & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\end{align*}
+
+
+The tensor $T$ can be decomposed into the the polar decomposition $T=RU$ and $T=VR$ as the following:
+
+Right Polar Decomposition:
+
+\begin{align*}
+T&=RU\\[10pt]
+&=\begin{bmatrix}
+\frac{\sqrt{ 2 }}{4}+\frac{\sqrt{ 6 }}{4} & -\frac{\sqrt{ 2 }}{4}+\frac{\sqrt{ 6 }}{4} & 0 \\
+-\frac{\sqrt{ 6 }}{4}+\frac{\sqrt{ 2 }}{4} & \frac{\sqrt{ 2 }}{4}+\frac{\sqrt{ 6 }}{4} & 0 \\
+0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+\frac{\sqrt{ 6 }}{4}+\frac{3\sqrt{ 2 }}{4} & -\frac{\sqrt{ 6 }}{4}+\frac{3\sqrt{ 2 }}{4} & 0 \\
+-\frac{\sqrt{ 6 }}{4}+\frac{3\sqrt{ 2 }}{4} & \frac{\sqrt{ 2 }}{4}+\frac{3\sqrt{ 6 }}{4} & 0 \\
+0 & 0 & 1
+\end{bmatrix}\\[10pt]
+&=\begin{bmatrix}
+\sqrt{ 3 } & 1 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\end{align*}
+
+Left Polar Decomposition:
+
+\begin{align*}
+T&=VR\\[10pt]
+&=\begin{bmatrix}
+\frac{\sqrt{ 2 }}{2}+\frac{\sqrt{ 6 }}{2} & -\frac{\sqrt{ 2 }}{2}+\frac{\sqrt{ 6 }}{2} & 0 \\
+-\frac{\sqrt{ 2 }}{2}+\frac{\sqrt{ 6 }}{2} & \frac{\sqrt{ 2 }}{2}+\frac{\sqrt{ 6 }}{2} & 0 \\
+0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+\frac{\sqrt{ 2 }}{4}+\frac{\sqrt{ 6 }}{4} & -\frac{\sqrt{ 2 }}{4}+\frac{\sqrt{ 6 }}{4} & 0 \\
+-\frac{\sqrt{ 6 }}{4}+\frac{\sqrt{ 2 }}{4} & \frac{\sqrt{ 2 }}{4}+\frac{\sqrt{ 6 }}{4} & 0 \\
+0 & 0 & 1
+\end{bmatrix}\\[10pt]
+&=
+\begin{bmatrix}
+\sqrt{ 3 } & 1 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\end{align*}
+
+The geometric interpretation of the polar decomposition of tensor $T$ consists of a rotation and a dilation, where $R$ is a rotation matrix, taking a unit square and operating upon the square as a rigid body rotation without deformation. The tensors $U$ and $V$ perform stretch operations upon a unit square. 
+
+

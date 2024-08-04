@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[all]{xy}
+
+\usepackage{cancel}
+
+\usepackage{amsmath,amsthm,amssymb,color,latexsym}
+\usepackage{geometry}        
+\geometry{letterpaper}    
+\usepackage{graphicx}
+\usepackage[shortlabels]{enumitem}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{.75\columnwidth}
+    \import{./Figures/}{#1.pdf_tex}
+}
+
+\newtheorem{problem}{Problem}
+
+\newenvironment{solution}[1][\it{Solution}]{\textbf{#1. } }{$\square$}
+
+
+\begin{document}
+\noindent TAM 445 Spring 2024\hfill Problem Set 4\\
+Jerich Lee. (02/23)
+
+\hrulefill
+
+\input{problems/problem1.tex}
+\input{problems/problem2.tex}
+
+
+
+
+\end{document}
+

@@ -1,0 +1,47 @@
+\begin{problem}
+    \noindent
+    \normalfont
+
+    We will compute the infinitesimal strain tensor on the mid-plane $\mathbf{p}=(l,0,l)$. First, we will compute the displacement field $\mathbf{u}(\mathbf{p})=\mathbf{x}(\mathbf{p})-\mathbf{p}$:
+
+\begin{align}
+\mathbf{u}(\mathbf{p})=\mathbf{x(p)}-\mathbf{p} \\
+= \begin{bmatrix}
+r\sin\left( \frac{l}{r} \right) \\
+r\left( \cos\left( \frac{l}{r} \right)-1 \right) \\
+l
+\end{bmatrix}-\begin{bmatrix}
+l \\
+0 \\
+l
+\end{bmatrix} \\
+=\begin{bmatrix}
+-l+r\sin\left( \frac{l}{r} \right) \\
+-r\left( 1-\cos\left( \frac{l}{r} \right) \right) \\
+0
+\end{bmatrix}
+\end{align}
+
+Computing the infinitesimal strain tensor:
+
+
+\begin{align}
+\mathbf{\epsilon}=\frac{\nabla \mathbf{u}+\nabla \mathbf{u}^{\text{T}}}{2} \\
+=\frac{\left( \begin{bmatrix}
+\cos\left( \frac{l}{r} \right)-1 & \sin\left( \frac{l}{r} \right) & 0 \\
+-\sin\left( \frac{l}{r} \right) & \cos\left( \frac{l}{r} \right)-1 & 0 \\
+0 & 0 & 0
+\end{bmatrix}+\begin{bmatrix}
+\cos\left( \frac{l}{r} \right)-1 & -\sin\left( \frac{l}{r} \right) & 0 \\
+\sin\left( \frac{l}{r} \right) & \cos\left( \frac{l}{r} \right)-1 & 0 \\
+0 & 0 & 0
+\end{bmatrix} \right)}{2} \\
+=\begin{bmatrix}
+\cos\left( \frac{l}{r} \right)-1 & 0 & 0 \\
+0 & \cos\left( \frac{l}{r} \right)-1 & 0 \\
+0 & 0 & 0
+\end{bmatrix}\label{inf}
+\end{align}
+
+The infinitesimal strain tensor (\ref{inf}) is non-zero on the mid-plane, while the Lagrangian strain tensor (\ref{lag_strain}) is zero on the mid-plane. The infinitesimal strain tensor  shows that when $r\gg l$, then $\mathbf{\epsilon}\to 0$, meaning that when the radius of curvature is much larger than the length of the surface along axis $1$, the infinitesimal strain approaches zero. Therefore, the infinitesimal strain tensor is a good approximation of the Lagrangian strain tensor when $r\gg l$.
+\end{problem}

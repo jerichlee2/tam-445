@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[all]{xy}
+
+\usepackage{cancel}
+\usepackage{hyperref}
+\usepackage{amsmath,amsthm,amssymb,color,latexsym}
+\usepackage{geometry}        
+\geometry{letterpaper}    
+\usepackage{graphicx}
+\usepackage[shortlabels]{enumitem}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{.5\columnwidth}
+    \import{./Figures/}{#1.pdf_tex}
+}
+
+\newtheorem{problem}{Problem}
+
+\newenvironment{solution}[1][\it{Solution}]{\textbf{#1. } }{$\square$}
+
+
+\begin{document}
+\noindent TAM-445 \hfill HW 10\\
+Jerich Lee. (2024-04-26)
+
+\hrulefill
+
+
+\input{p1.tex}
+\end{document}
+

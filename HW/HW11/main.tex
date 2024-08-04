@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[all]{xy}
+
+\usepackage{cancel}
+\usepackage{hyperref}
+\usepackage{amsmath,amsthm,amssymb,color,latexsym}
+\usepackage{geometry}        
+\geometry{letterpaper}    
+\usepackage{graphicx}
+\usepackage[shortlabels]{enumitem}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\boxedeq}[2]{\begin{empheq}[box={\fboxsep=6pt\fbox}]{align}\label{#1}#2\end{empheq}}
+\newcommand{\coloredeq}[2]{\begin{empheq}[box=\colorbox{lightgreen}]{align}\label{#1}#2\end{empheq}}
+\usepackage{empheq} 
+\usepackage{xcolor}
+\definecolor{lightgreen}{HTML}{90EE90}
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{.5\columnwidth}
+    \import{./Figures/}{#1.pdf_tex}
+}
+
+\newtheorem{problem}{Problem}
+
+\newenvironment{solution}[1][\it{Solution}]{\textbf{#1. } }{$\square$}
+
+
+\begin{document}
+\noindent Spring-2024/TAM-445 \hfill Final Exam\\
+Jerich Lee. (2024-05-08)
+
+\hrulefill
+
+
+\input{p1.tex}
+\input{p2.tex}
+\input{p3.tex}
+\input{p4.tex}
+\end{document}
+

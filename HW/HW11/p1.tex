@@ -1,0 +1,166 @@
+\begin{problem}
+    \noindent
+    \normalfont
+
+    \begin{enumerate}
+        \item \begin{enumerate}
+            \item \begin{align}
+                \text{tr}(\text{ST})=\text{tr}(\text{TS}) \\
+                (\text{ST})_{ij}=\text{S}_{ik}\text{T}_{kj} \\
+                \text{tr}(\text{ST})=(\text{ST})_{ii}=\text{S}_{ik}\text{T}_{ki} \\
+                (\text{TS})_{ij}=\text{T}_{ik}\text{S}_{kj} \\
+                \text{tr}(\text{TS})=(\text{TS})_{ii}=\text{T}_{ik}S_{ki}
+                \end{align}
+                
+                Summation over $i$ and $k$ does not depend on the order of $\text{S}_{ik}, \text{T}_{ki}$, so $\text{S}_{ik}\text{T}_{ik}=\text{T}_{ik}\text{S}_{ki}$
+                
+                \boxedeq{}{\text{tr}(\text{ST})=\text{tr}(\text{TS})}.
+                
+            \item \begin{align}
+                \text{curl}(\phi \mathbf{u})=\nabla \phi \times \mathbf{u}+\phi\ \text{curl}(\mathbf{u}) \\
+                (\text{curl}(\mathbf{v}))_{i}=\epsilon_{ijk}\partial_{j}v_{k} \\
+                (\text{curl}(\phi \mathbf{u}))_{i}=\epsilon_{ijk}\partial_{j}(\phi u_{k}) \\
+                \partial_{j}(\phi u_{k})=(\partial_{j}\phi)u_{k}+\phi(\partial_{j}u_{k}) \\
+                (\text{curl}(\phi \mathbf{u}))_{i}=\epsilon_{ijk}((\partial_{j}\phi)u_{k}+\phi(\partial_{j}u_{k})) \\
+                =\epsilon_{ijk}(\partial_{j}\phi)u_{k}+\epsilon_{ijk}\phi(\partial_{j}u_{k}) \\
+                \epsilon_{ijk}(\partial_{j}u_{k})=\phi(\text{curl}\mathbf{u})_{i} \\
+                (\text{curl}(\phi \mathbf{u}))_{i}=(\nabla \phi \times \mathbf{u})_{i}+\phi(\text{curl}\mathbf{u})_{i} \\
+            \end{align}
+                \boxedeq{}{\text{curl}(\phi \mathbf{u})=\nabla \phi \times \mathbf{u}+\phi\  \text{curl}(\mathbf{u})}
+
+                \item \begin{align}
+                    \text{div}(\phi \text{T})=\text{T}\nabla \phi+\phi \text{div}(\text{T}) \\
+                    (\phi \text{T})_{ij}=\phi \text{T}_{ij} \\
+                    \text{div}(\text{T})_{i}=\partial_{j}\text{T}_{ij} \\
+                    \text{div}(\phi \text{T})_{i}=\partial_{j}(\phi \text{T}_{ij}) \\
+                    \partial_{j}(\phi \text{T}_{ij})=(\partial_{j}\phi)\text{T}_{ij}+\phi(\partial_{j}\text{T}_{ij}) \\
+                    \text{div}(\phi \text{T})_{i}=(\text{T}\nabla \phi)_{i}+\phi(\text{div}(\text{T})_{i}) \\
+                    \end{align}
+                    \boxedeq{}{\text{div}(\phi \text{T})=\text{T}\nabla \phi+\phi \text{div}(\text{T})}
+
+                \item \begin{align}
+                    \text{div}(\mathbf{u}\otimes \mathbf{v})=(\text{div}(\mathbf{v}))\mathbf{u}+(\nabla \mathbf{u})\mathbf{v}  \\
+                    (\mathbf{u}\otimes \mathbf{v})_{ij}=u_{i}v_{j} \\
+                    \text{div}(\text{T})_{i}=\partial_{j}\text{T}_{ij} \\
+                    \text{div}(\mathbf{u}\otimes \mathbf{v})_{i}=\partial_{j}(u_{i}v_{j}) \\
+                    \partial_{j}(u_{i}v_{j})=u_{i}\partial_{j}v_{j}+v_{j}\partial_{j}u_{i} \\
+                    \text{div}(\mathbf{u}\otimes \mathbf{v})_{i}=(\text{div}(\mathbf{v}))u_{i}+(\nabla \mathbf{u}\mathbf{v})_{i} \\
+                    \end{align}
+                    \boxedeq{}{\text{div}(\mathbf{u}\otimes \mathbf{v})=(\text{div}(\mathbf{v}))\mathbf{u}+(\nabla \mathbf{u})\mathbf{v}}
+                \item \begin{align}
+                    \Delta(\xi \eta)=\xi\Delta \eta+\eta\Delta \xi+2\nabla \xi \cdot \nabla \eta \\
+                    \Delta \psi=\nabla^2\psi=\partial_{i}\partial_{i}\psi \\
+                    \Delta(\zeta \eta)=\partial_{i}\partial_{i}(\zeta \eta) \\
+                    \partial_{i}\partial_{i}(\zeta \eta)=\partial_{i}(\partial_{i}\zeta \eta+\zeta \partial_{i}\eta) \\
+                    \partial_{i}(\partial_{i}\zeta \eta+\zeta \partial_{i}\eta)=\partial_{i}(\partial_{i}\zeta \eta)+\partial_{i}(\zeta \partial_{i}\eta) \\
+                    =\partial_{i}\partial_{i}\zeta \eta+\partial_{i}\zeta \partial_{i}\eta+\partial_{i}\zeta \partial_{i}\eta+\zeta \partial_{i}\partial_{i}\eta \\
+                    =\eta\Delta \zeta+\zeta\Delta \eta+2\partial_{i}\zeta \partial_{i}\eta \\
+                    \nabla \phi=\partial_{i}\phi \mathbf{e}_{i} \\
+                    2\partial_{i}\zeta \partial_{i}\eta=2\nabla \zeta \cdot \nabla \eta
+                    \end{align}
+                    \boxedeq{}{\Delta(\xi \eta)=\xi\Delta \eta+\eta\Delta \xi+2\nabla \xi \cdot \nabla \eta}
+        \end{enumerate}
+    \item \begin{enumerate}
+        \item \begin{align}
+            \text{I}_{1}(\text{S})=\text{tr}(\text{S})\\
+            \text{tr}(\text{S})=\text{tr}(\text{QS}\text{Q}^{{\text{T}}}) \\
+            \text{T}=\text{Q} \\
+            \text{tr}(\text{SQ})=\text{tr}(\text{QS}) \\
+            =\text{tr}(\text{QS}\underbrace{ \text{Q}^{\text{T}} Q}_{\text{I}})=\text{tr}(\text{QQS}\text{Q}^{\text{T}}) \\
+            \text{T}=\text{Q}^{\text{T}} \\
+            \text{tr}(\text{SQ}^{\text{T}})=\text{tr}(\text{Q}^{\text{T}}\text{S})  \\
+            =\text{tr}(\text{SQ}^{\text{T}})=\text{tr}(\text{Q}^{T}\text{Q}\text{S}\text{Q}^{\text{T}}) \\
+            \end{align}
+            \boxedeq{}{\text{tr}(\text{S}\text{Q}^{\text{T}})=\text{tr}(\text{S}\text{Q}^{\text{T}})}
+            \item \begin{align}
+                \text{I}_{2}(\text{SQ})=\frac{1}{2}[(\text{tr}(\text{SQ}))^2-\text{tr}((\text{SQ})^2)] \\
+                =\frac{1}{2}[(\text{tr}(\text{QSQ}^{\text{T}}Q))^2-\text{tr}((\text{QSQ}^{\text{T}}\text{Q})^2)] \\
+                =[\text{tr}(\text{SQ}^2)-\text{tr}((\text{SQ})^2)]=[\text{tr}(\text{QS})^2-\text{tr}((\text{QS})^2)] \\
+                \cancel{ \text{tr}(\text{SQ})^2 }-\text{tr}(\text{SQSQ})=\cancel{ \text{tr}(\text{QS})^2 }-\text{tr}(\text{QSQS})
+                \end{align}
+            \item \begin{align}
+                \text{I}_{3}(\text{S})=\text{det}(\text{S}) \\
+                \text{T}=\text{Q} \\
+                \text{det}(\text{ST})=\text{det}(\text{S})\text{det}(\text{T})=\text{det}(\text{T})\text{det}(\text{S}) \\
+                \text{det}(\text{T})=1, \ \text{T}=\text{Q},\ \text{det}(\text{Q})=1 \\
+                \text{det}(\text{S})=\underbrace{ \text{det}(\text{Q}) }_{ 1 }\text{det}(\text{S})\underbrace{ \text{det}(\text{Q}^{\text{T}}) }_{ 1 } \\
+                \end{align}
+                \boxedeq{}{\text{det}(\text{S})=\text{det}(\text{S})}
+                \item 
+    
+                \begin{align}
+                \text{F}=\text{RU}, \ \text{F}=\text{VR}
+                \end{align}
+                
+                
+                Eigenvalues are given by the following:
+                
+                
+                \begin{align}
+                -\lambda^3+\text{I}_{1}\lambda^2-\text{I}_{2}\lambda+\text{I}_{3}=0
+                \end{align}
+            
+                \begin{align}
+                \text{det}(\mathbf{U}-\lambda \mathbf{I})=\text{det}(\mathbf{V}-\lambda \mathbf{I}) \\
+                \mathbf{S}=\mathbf{U}-\lambda \mathbf{I} \\
+                \mathbf{T}=\mathbf{R} \\
+                \text{det}(\mathbf{S})=\det(\mathbf{R}\mathbf{S}\mathbf{R}^{\text{T}}) \\
+                \end{align}
+                
+                
+                $\text{RU}=\text{VR}, \ \text{R}^{\text{T}}\text{R}\text{U}=\text{R}^{\text{T}}\text{V}\text{R}\implies \text{U}=\text{R}^{\text{T}}\text{V}\text{R}$, and $\text{R}\in \text{Orth}$.
+                
+                
+                \begin{align}
+                \mathbf{U}=\mathbf{R}^{-1}\mathbf{F}, \ \mathbf{V}=\mathbf{F}\mathbf{R}^{-1} \\
+                \det(\mathbf{R}^{-1}\mathbf{F})=\det(\mathbf{F}\mathbf{R}^{-1}) \\
+                \underbrace{ \cancel{ \det(\mathbf{R}^{-1})U } }_{ 1 }\det(\mathbf{F})=\det(\mathbf{F})\underbrace{ \cancel{ \det(\mathbf{R}^{-1}) } }_{ 1 } \\
+                =\det(\mathbf{F})=\det(\mathbf{F})
+                \end{align}
+                
+                
+                The equation above shows that the eigenvalues of $\mathbf{U}$ and $\mathbf{V}$ are equal, as the invariants of $\mathbf{U}$ and $\mathbf{V}$ are the same.
+                
+            
+                \begin{align}
+                \text{det}(\text{U}-\lambda \text{I})=0 \\
+                \text{U}\mathbf{e}=\lambda_{u}\mathbf{e} \\
+                \text{RU}\mathbf{e}=\text{R}\lambda_{u}\mathbf{e} \\
+                =\text{RU}\mathbf{e}=\lambda_{u}\text{R}\mathbf{e} \\
+                \text{V}\mathbf{e}=\lambda_{u}\text{R}\mathbf{e}
+                \end{align}
+                
+                
+                The equation above shows that that if $\mathbf{e}$ is an eigenvector of $\mathbf{U}$, then $\mathbf{Re}$ is an eigenvalue of $\mathbf{V}$.
+               
+            \end{enumerate}
+            \item 
+            \begin{align}
+            \mathbf{Q}^{\text{T}}\mathbf{A}\mathbf{Q}=\mathbf{A}\forall \mathbf{Q}\in \text{Orth}\iff \mathbf{A}\mathbf{Q}\mathbf{v} \\
+            \mathbf{A}\mathbf{v}=\lambda \mathbf{v} \\
+            \alpha \mathbf{I}\mathbf{v}=\lambda \mathbf{v} \\
+            \alpha \mathbf{v}=\lambda \mathbf{v} \\
+            \alpha=\lambda
+            \end{align}
+            
+            Using the result from above:
+            
+            
+            \begin{align}
+            \mathbf{QQ}\mathbf{v}=\lambda \mathbf{Qv} \\
+            \mathbf{Q}^{\text{T}}\mathbf{QQv}=\mathbf{Q}^{\text{T}}\alpha \mathbf{Qv} \\
+            =\mathbf{Qv}=\mathbf{Q}^{\text{T}}\alpha \mathbf{Qv} \\
+            \mathbf{Qv}=\alpha \mathbf{Iv} \\
+            \mathbf{Qv}=\mathbf{Av} \\
+            \mathbf{Q}=\mathbf{A} \\
+            \underbrace{ \cancel{ \mathbf{Q}^{\text{T}}\mathbf{Q} } }_{ \mathbf{I} }\mathbf{Q}=\mathbf{Q} \\
+            \mathbf{Q}^{\text{T}}\mathbf{A}\mathbf{Q}=\mathbf{A}  \\
+            =\mathbf{Q}^{\text{T}}\alpha \mathbf{I}\mathbf{Q}=\alpha \mathbf{I} \\
+            \end{align}
+            \boxedeq{}{\alpha \mathbf{I}=\alpha \mathbf{I}}
+    \end{enumerate}
+
+
+    
+\end{problem}
+\pagebreak

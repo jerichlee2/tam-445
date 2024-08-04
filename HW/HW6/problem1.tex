@@ -1,0 +1,22 @@
+\begin{problem}
+    \noindent
+    \normalfont
+
+    We begin by creating the deformation mapping:
+
+    \begin{align}
+        \mathbf{x}(\mathbf{p})=\begin{bmatrix}
+        (p_{2}+r)\sin\left( \frac{p_{1}}{r} \right) \\
+        p_{2}-(p_{2}+r)\left( 1-\cos\left( \frac{p_{1}}{r} \right) \right) \\
+        p_{3}
+        \end{bmatrix} \label{deform}
+        \end{align}
+        The gradient of the deformation mapping is as follows:
+        \begin{align}
+            \mathbf{F}(\mathbf{p})=\begin{bmatrix}
+            \frac{(p_{2}+r)\cos\left( \frac{p_{1}}{r} \right)}{r} & \sin\left( \frac{p_{1}}{r} \right) & 0 \\
+            -\frac{(p_{2}+r)\sin\left( \frac{p_{1}}{r} \right)}{r} & \cos\left( \frac{p_{1}}{r} \right) & 0 \\
+            0 & 0 & 1
+            \end{bmatrix}
+            \end{align}
+\end{problem}

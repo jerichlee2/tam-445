@@ -1,0 +1,39 @@
+\begin{problem}
+    \noindent
+    \normalfont
+    The determinant of the gradient is as follows:
+
+\begin{align}
+\det(\mathbf{F}(\mathbf{p}))=\frac{(p_{2}+r)\cos\left( \frac{p_{1}}{r} \right)}{r}\left( \cos\left( \frac{p_{1}}{r} \right) \right)-\sin\left( \frac{p_{1}}{r} \right)\left( -\frac{(p_{2}+r)\sin\left( \frac{p_{1}}{r} \right)}{r} \right) \\
+=\frac{p_{2}+r}{r}
+\end{align}
+
+We evaluate the determinant of the deformation gradient at values at the mid-line, or when $p_{2}=0$:
+
+\begin{align}
+\det(\mathbf{F})|_{p_{2}=0}=1 \\
+\end{align}
+
+A determinant of $1$ results in no dilation transformation.
+
+
+
+We evaluate the determinant of the deformation gradient at values above the mid-line, or when $p_{2}>0$:
+
+\begin{align}
+\det \mathbf{F}|_{p_{2}=\frac{h}{2}}={\left( \frac{h}{2}+r \right)}{r} \\
+=\left( \frac{h}{2r}+1 \right)>1
+\end{align}
+
+
+$h$ and $r$ are always positive values, so the points above the midline undergo an expansion.
+
+We evaluate the determinant of the deformation gradient at values below the mid-line, or when $p_{2}<0$:
+
+\begin{align}
+\det \mathbf{F}|_{p_{2}=-\frac{h}{2}}=\frac{\left( r-\frac{h}{2} \right)}{r}<1 \\
+=1-\frac{h}{2r}<1
+\end{align}
+
+$h$ and $r$ are always positive values, so the points above the midline undergo a compression.
+\end{problem}

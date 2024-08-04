@@ -1,0 +1,168 @@
+\begin{problem}
+    \normalfont
+    Prove the following identities related to the cross product of vectors:
+\begin{enumerate}
+    \item 
+    Prove the following:
+
+\begin{align*}
+(u\times v)\times w&=(u\cdot w)v-(v\cdot w)u\tag{1}\\[10pt]
+\end{align*}
+
+
+Converting from direct to indicial:
+
+\begin{align*}
+u&=u_{i}e_{i}\\[10pt]
+v&=v_{j}e_{j}\\[10pt]
+w&=w_{k}e_{k}
+\end{align*}
+
+
+\begin{align*}
+(u\times v)\times w&=(u\cdot w)v-(v\cdot w)u\\[10pt]
+&=(u_{i}e_{i}\times v_{j}e_{j})\times w_{k}e_{k}\\[10pt]
+&=u_{i}v_{j}w_{k}(e_{i}\times e_{j})\times e_{k}\\[10pt]
+&=u_{i}v_{j}w_{k}(\epsilon_{ijl}e_{l})\times e_{k}\\[10pt]
+&=u_{i}v_{j}w_{k}\epsilon_{ijl}(e_{l}\times e_{k})\\[10pt]
+&=u_{i}v_{j}w_{k}\epsilon_{ijl}\epsilon_{lkm}e_{m}\\[10pt]
+&=u_{i}v_{j}w_{k}\epsilon_{ijl}\epsilon_{kml}e_{m}\\[10pt]
+\end{align*}
+
+
+Using the following identity:
+
+$$
+\epsilon_{ijl}\epsilon_{kml}=\delta_{ik}\delta_{jm}-\delta_{im}\delta_{jk}
+$$
+
+
+\begin{align*}
+&=u_{i}v_{j}w_{k}(\delta_{ik}\delta_{jm}-\delta_{im}\delta_{jk})e_{m}\\[10pt]
+&=v_{j}(u_{i}w_{k}\delta_{ik})\delta_{jm}e_{m}-u_{i}(v_{j}w_{k}\delta_{kj})\delta_{im}e_{m}\\[10pt]
+&=v_{j}(u_{i}w_{i})e_{j}-u_{i}(v_{j}w_{j})e_{i}
+\end{align*}
+
+Converting back to direct notation:
+
+\begin{align*}
+v_{j}(u_{i}w_{i})e_{j}-u_{i}(v_{j}w_{j})e_{i}&=(u\times v)\times w\tag{2}
+\end{align*}
+Equation 1 and Equation 2 are equal. $\qed$
+\vspace*{1cm}
+\item
+    Prove the following:
+
+
+    \begin{align*}
+    A\times(B\times C)&=B(A\cdot C)-C(A\cdot B)\\[10pt]
+    \end{align*}
+    
+    
+    Converting from direct to indicial:
+    
+    
+    \begin{align*}
+    A&=a_{i}e_{i}\\[10pt]
+    B&=b_{j}e_{j}\\[10pt]
+    C&=c_{k}e_{k}
+    \end{align*}
+    
+    
+    \begin{align*}
+    A\times(B\times C)&=a_{i}e_{i}\times(b_{j}e_{j}\times c_{k}eK)\\[10pt]
+    &=a_{i}b_{j}c_{k}e_{k}\times(e_{j}\times e_{k})\\[10pt]
+    &=a_{i}b_{j}c_{k}e_{i}\times(\epsilon_{jkl}e_{l})\\[10pt]
+    &=a_{i}b_{j}c_{k}\epsilon_{jkl}(e_{i}\times e_{l})\\[10pt]
+    &=a_{i}b_{j}c_{k}\epsilon_{jkl}\epsilon_{ilm}e_{m}\\[10pt]
+    &=a_{i}b_{j}c_{k}\epsilon_{jkl}\epsilon_{mil}e_{m}\\[10pt]
+    \end{align*}
+
+    \pagebreak
+    Using the $\epsilon-\delta$ relation:
+    
+
+    \begin{align*}
+    &=a_{i}b_{j}c_{k}(\delta_{jm}\delta_{ki}-\delta_{ji}\delta_{km})e_{m}\\[10pt]
+    &=b_{j}(a_{i}c_{k}\delta_{ki})e_{m}-c_{k}(a_{i}b_{j}\delta_{ji})\delta_{km}e_{m}\\[10pt]
+    &=b_{j}(A\cdot C)e_{j}-c_{k}(A\cdot B)e_{k}\\[10pt]
+    &=B(A\cdot C)-C(A\cdot B)
+    \end{align*}
+    
+    
+    $\qed$
+    
+    
+    \item     
+Prove the following:
+$$
+\text{det}S=\frac{Su\cdot(Sv\times Sw)}{u\cdot(v\times w)}
+$$
+
+Converting from direct notation to indicial notation:
+
+\begin{align*}
+Su&=S_{ij}u_{j}e_{i}\\[10pt]
+Sv&=S_{km}v_{m}e_{k}\\[10pt]
+Sw&=S_{ol}w_{l}e_{o}
+\end{align*}
+
+\begin{align*}
+u&=u_{j}e_{j}\\[10pt]
+v&=v_{m}e_{m}\\[10pt]
+w&=w_{l}e_{l}
+\end{align*}
+
+
+We can convert the numerator to the following:
+
+
+\begin{align*}
+Su\cdot(Sv\times Sw)&=(S_{ij}u_{j}e_{i})\cdot(S_{km}v_{m}e_{k}\times S_{ol}w_{l}e_{o})\\[10pt]
+&=(S_{ij}u_{j}e_{i})\cdot(S_{km}v_{m}S_{ol}w_{l}(e_{k}\times e_{o}))\\[10pt]
+&=(S_{ij}u_{j}e_{i})\cdot(S_{km}v_{m}S_{ol}w_{l}e_{p}\epsilon_{kop})\\[10pt]
+&=\epsilon_{kop}S_{ij}u_{j}S_{km}v_{m}S_{ol}w_{l}(e_{l}\cdot e_{p})\\[10pt]
+&=\epsilon_{kop}S_{ij}u_{j}S_{km}v_{m}S_{ol}w_{l}\delta_{ip}\\[10pt]
+&=\epsilon_{koi}S_{ij}S_{km}S_{ol}u_{j}v_{m}w_{l}\tag{1}
+\end{align*}
+\pagebreak
+
+Converting the denominator
+
+
+\begin{align*}
+u\cdot(v\times w)&=
+(u_{j}e_{j})\cdot(v_{m}e_{m}\times w_{l}e_{l})\\[10pt]
+&=(u_{j}e_{j})\cdot(v_{m}w_{l}(e_{m}\times e_{l}))\\[10pt]
+&=(u_{j}e_{j})\cdot(v_{m}w_{l}e_{p}\epsilon_{mlp})\\[10pt]
+&=\epsilon_{mlp}u_{j}v_{m}w_{l}\delta_{jp}\\[10pt]
+&=\epsilon_{mlj}u_{j}v_{m}w_{l}\tag{2}
+\end{align*}
+
+
+Taking the ratio of Equation 1 and Equation 2:
+
+
+\begin{align*}
+\text{det}S &=\frac{\epsilon_{koi}S_{ij}S_{km}S_{ol}\cancel{ u_{j}v_{m}w_{l} }}{\epsilon_{mlj}\cancel{ u_{j}v_{m}w_{l} }}\\[10pt]
+&=\frac{\epsilon_{koi}S_{ij}S_{km}S_{ol}}{\epsilon_{jml}}
+\end{align*}
+
+
+We know from the following identity:
+
+$$
+\epsilon_{jml} \ \text{det}S=\epsilon_{iko}S_{ij}S_{km}S_{ol}
+$$
+
+Dividing the above by $\epsilon_{jml}$:
+
+$$
+\text{det}S = \frac{\epsilon_{iko}S_{ij}S_{km}S_{ol}}{\epsilon_{jml}}
+$$
+
+
+Equation 3 and Equation 4 are equal. $\qed$
+\end{enumerate}
+\end{problem}
+\pagebreak

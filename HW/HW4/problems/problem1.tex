@@ -1,0 +1,96 @@
+\begin{problem}
+    \normalfont
+Determine the eigenvalues, eigenvector spaces (also known as characteristic spaces), and a spectral decomposition for each of the following tensors:
+\end{problem}
+
+\begin{enumerate}
+    \item $$
+    \mathbf{A} = \alpha \mathbf{I}+\beta \mathbf{m}\otimes \mathbf{m}
+    $$
+    Due to the following result from the definition of eigenvectors and eigenvalues:
+$$
+Ax=\lambda x
+$$
+$A$ can act upon an arbitrary vector, namely $m$ as shown below:
+\begin{align*}
+    Am&=(\alpha I+\beta m\otimes m)m\\[10pt]
+    &=\alpha Im+\beta(m\otimes m)m\\[10pt]
+    &=\alpha m+\beta(m\cdot m)m\\[10pt]
+    &=\alpha m+\beta m\\[10pt]
+    &=(\alpha+\beta)m\\[10pt]
+    Am&=(\alpha+\beta)m
+    \end{align*}
+
+    We know that there must be three eigenvalues because the dimension of the tensor $A$ is $3$. We can use the property than eigenvectors are mutually orthogonal to each other to determine the other eigenvectors of $A$. A prospective vector is $n$, which is orthogonal to $m$:
+
+    \begin{align*}
+    An&=(\alpha I+\beta m\otimes m)n\\[10pt]
+    &=(\alpha In+\beta(m\otimes m)n)\\[10pt]
+    &=(\alpha n+\beta(m\cdot n)m)\\[10pt]
+    &=\alpha n\\[10pt]
+    An&=\alpha n
+    \end{align*}
+    
+
+If $m$ and $n$ are both orthogonal to each other, then a vector $l=m\times n$ is also mutually orthogonal to $m$ and $n$, and lives in the space of the third eigenvector of $A$.:
+
+\begin{align*}
+Al&=(\alpha I+\beta m\otimes m)\\[10pt]
+&=\alpha l+\beta(m\otimes m)l\\[10pt]
+&=\alpha l+\underbrace{ \cancel{ \beta(m\cdot l)mC } }_{ 0 }\\[10pt]
+Al&=\alpha l
+\end{align*}
+
+The following lists the eigenvalues and eigenvectors of the tensor $A$:
+$$
+\lambda_{1}=\alpha+\beta,\ \lambda_{2}=\alpha,\ \lambda_{3}=\alpha
+$$
+$$
+v_{1}=m,\ v_{2}=n, \ v_{3}=m\times n
+$$
+
+The spectral decomposition of a tensor $\in \text{Psym}$ is defined as the following:
+
+$$
+S=\sum_{i=1}^3 \lambda_{i}\underline{u}_{i}\otimes \underline{u}_{i}
+$$
+
+Therefore, the tensor $A$ can be written in terms of the eigenvalues and eigenvectors as:
+
+\begin{align*}
+A&=(\alpha+\beta)m\otimes m+\alpha n\otimes n+\alpha(m\times n)\otimes (m\times n)\\[10pt]
+&=\alpha m\otimes m+\beta m\otimes m+\alpha n\otimes n+\alpha(m\times n)\otimes (m\times n)\\[10pt]
+A&=\alpha(m\otimes m+n\otimes n+(m\times n)\otimes (m\times n))+\beta(m\otimes m)
+\end{align*}
+
+    \item $$
+    \mathbf{B}=\mathbf{m}\otimes \mathbf{n}+\mathbf{n}\otimes \mathbf{m}
+    $$
+    Applying the operation of tensor $B$ upon the given unit vector $m$:
+    \begin{align*}
+        Bm &=(m\otimes n+n\otimes m)m)\\[10pt]
+        &=(m\otimes n)m+(n\otimes m)m\\[10pt]
+        &=\underbrace{ \cancel{ (n\cdot m)m }C }_{ 0 }+\underbrace{ (m\cdot m) }_{ 1 }n\\[10pt]
+        Bm&=n
+        \end{align*}
+        Applying the operation of tensor $B$ upon the given unit vector $n$:
+        \begin{align*}
+            Bn&=(m\otimes n+n\otimes m)n)\\[10pt]
+            &=(m\otimes n)n+(n\otimes m)n\\[10pt]
+            &=(n\cdot n)m+(m\cdot n)n\\[10pt]
+            Bn&=m
+            \end{align*}
+            Applying the operation of tensor $B$ upon the unit vector $m\times n$:
+            The following lists the eigenvalues and eigenvectors of the tensor $B$:
+$$
+\lambda_{1}=1,\ \lambda_{2}=1,\ \lambda_{3}=0
+$$
+$$
+v_{1}=n, \ v_{2}=m,\ v_{3}=0
+$$
+The spectral decomposition of a tensor $\in \text{Psym}$ is defined as the following:
+\begin{align*}
+B&=\sum_{i=1}^3 \lambda_{i}\underline{u}_{i}\otimes u_{i}\\[10pt]
+&=n\otimes n+m\otimes m\\[10pt]
+\end{align*}
+\end{enumerate}

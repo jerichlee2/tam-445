@@ -1,0 +1,202 @@
+\begin{problem}
+    \noindent
+    \normalfont
+
+    \begin{enumerate}
+        \item 
+        \begin{enumerate}
+            \item \begin{align}
+                \psi=c_{1}(\text{tr(B)}-3), \text{B}=\text{FF}^{\text{T}} \\
+                \end{align}
+                
+                
+                Suppose $\text{T}$ is of the form:
+                
+                
+                \begin{align}
+                \text{T} = -p\mathbf{\text{I}}+ \square
+                \end{align}
+                
+                
+                The First Piola-Kirchhoff stress tensor, where $\text{J}=\det \text{F}$ is:
+                
+                
+                \begin{align}
+                \text{P}=\text{J}\text{T}\text{F}^{-\text{T}}
+                \end{align}
+                
+                
+                Another form of the Piola-Kirchhoff stress tensor, where $\hat{\text{W}} = \rho_{0}\psi$ is computed by the following:
+                
+                
+                \begin{align}
+                \text{P}^{e}=\frac{ \partial \hat{\text{W}} (\text{T},\text{F})}{ \partial \text{F} } 
+                \end{align}
+                
+                Converting Eq 1 to indicial notation:
+                
+                \begin{align}
+                \psi=c_{1}(\text{tr}(\text{F}_{iJ}F_{Ji})-3) \\
+                =c_{1}(\text{F}\cdot \text{F}-3) \\
+                c_{1}((\text{FF}^{\text{T}})_{ii}-3) \\
+                =c_{1}(\text{F}_{iJ}\text{F}_{iJ}-3) \\
+                \end{align}
+                
+                
+                Applying Eq 4 to the above:
+                
+                
+                \begin{align}
+                \text{P}^{e}=\frac{ \partial \hat{\text{W}} (\text{T},\text{F})}{ \partial \text{F} }  \\
+                =c_{1}\left( \text{F}_{iJ}\frac{ \partial \text{F}_{iJ} }{ \partial \text{F}_{kL} }  +\text{F}_{iJ}\frac{ \partial \text{F}_{iJ} }{ \partial \text{F}_{kL} }\right) \\
+                =c_{1}\left(\text{F}_{iJ}\delta_{ik}\delta_{JL}+\text{F}_{iJ}\delta_{ik}\delta_{JL}\right) \\
+                c_{1}\rho_{0}2\text{F}_{kL}
+                \end{align}
+                
+                
+                Substituting the above into the Cauchy Stress tensor:
+                
+                
+                \begin{align}
+                \text{T}=\frac{1}{\text{J}}\text{P}\text{F}^{\text{T}} \\
+                = c_{1}\rho_{0}2\text{F}\text{F}^{\text{T}} \\
+                =\underbrace{ c_{1}\rho_{0}2 }_{ \mu }\text{B} \\
+                =\mu \text{B}
+                \end{align}
+                
+                
+                Therefore, we have shown that $\text{T}$ is of the form: 
+                
+                
+                \begin{align}
+                \text{T} = -p\mathbf{\text{I}}+ \mu \text{B}
+                \end{align}
+                \item The Cauchy stress due to the imposed simple shear is the following:
+            
+            \begin{align}
+                \text{T} = -p\mathbf{\text{I}}+ \mu \text{B} \\
+                =-p\underbrace{ \begin{bmatrix}
+                1 & 0 & 0 \\
+                0 & 1 & 0 \\
+                0 & 0 & 1
+                \end{bmatrix} }_{ \text{I} }+\mu \underbrace{ \begin{bmatrix}
+                1 & \gamma(t) & 0 \\
+                0 & 1 & 0 \\
+                0 & 0 & 1
+                \end{bmatrix}\begin{bmatrix}
+                1 & 0 & 0 \\
+                \gamma (t) & 1 & 0 \\
+                0 & 0 & 1
+                \end{bmatrix} }_{ \text{B} } \\
+                =\begin{bmatrix}
+                \mu^2(\gamma^2(t)+1)-p & \mu^2\gamma(t) & 0 \\
+                \mu^2\gamma(t) & \mu^2-p & 0 \\
+                0 & 0 & \mu^2-p
+                \end{bmatrix}
+                \end{align}
+                
+            \end{enumerate}
+            \item The Cauchy stress tensor due to the imposed simple shear motion is given as the following:
+            
+            Computing the deformation map:
+
+
+\begin{align}
+\mathbf{x}=\begin{bmatrix}
+\mathbf{X}_{1}+\mathbf{X}_{2}\gamma(t) \\
+\mathbf{X}_{2} \\
+\mathbf{X}_{3}
+\end{bmatrix}
+\end{align}
+
+
+Computing $\mathbf{v}$:
+
+
+\begin{align}
+\mathbf{v}=\begin{bmatrix}
+\mathbf{X}_{2}\dot{\gamma} \\
+0 \\
+0
+\end{bmatrix}
+\end{align}
+
+
+Converting the above into the spatial description:
+
+
+\begin{align}
+\mathbf{v}_{s}=\begin{bmatrix}
+\mathbf{x}_{2}\dot{\gamma} \\
+0 \\
+0
+\end{bmatrix}
+\end{align}
+
+Computing the gradient of $\mathbf{v}_{s}$:
+
+
+\begin{align}
+\text{grad}\mathbf{v}_{s} = \begin{bmatrix}
+0 & \dot{\gamma} & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+\end{align}
+
+
+The stretch rate tensor is given by:
+
+
+\begin{align}
+\text{D}_{s}=\frac{1}{2} \text{grad}\mathbf{v}_{s}+\text{grad}\mathbf{v}_{s}^{\text{T}} \\
+=\frac{1}{2}\left(\begin{bmatrix}
+0 & \dot{\gamma} & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}+\begin{bmatrix}
+0 & 0 & 0 \\
+\dot{\gamma} & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}\right)
+\end{align}
+
+
+Substituting the above into the definition of the Cauchy stress for a Newtonian fluid:
+
+\begin{align}
+\text{T}=-p\text{I}+2\mu \text{D}_{s} \\
+=-p\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}+2\mu\left( \frac{1}{2} \text{grad}\mathbf{v}_{s}+\text{grad}\mathbf{v}_{s}^{\text{T}} \right) \\
+=-p\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}+2\mu\frac{1}{2}\left(\begin{bmatrix}
+0 & \dot{\gamma} & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}+\begin{bmatrix}
+0 & 0 & 0 \\
+\dot{\gamma} & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}\right) \\
+= \begin{bmatrix}
+-p & \mu \dot{\gamma} & 0 \\
+\mu \dot{\gamma} & -p &0 \\
+0 & 0 & -p
+\end{bmatrix}
+\end{align}
+
+
+
+        \end{enumerate}
+        
+   
+
+
+ 
+\end{problem}

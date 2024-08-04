@@ -1,0 +1,36 @@
+\begin{problem}
+    \noindent
+    \normalfont
+
+    The mid-plane is described as the point $\mathbf{p}=(l,0, l)$. Computing the Lagrangian strain tensor with $\mathbf{p}$ as the input:
+
+
+\begin{align}
+\mathbf{E}=\frac{\mathbf{F}^{\text{T}}\mathbf{F}-\mathbf{I}}{2} \\
+= \frac{\left( \begin{bmatrix}
+\cos\left( \frac{l}{r} \right) & \sin\left( \frac{l}{r} \right) & 0 \\
+-\sin\left( \frac{l}{r} \right) & \cos\left( \frac{l}{r} \right) & 0 \\
+0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+\cos\left( \frac{l}{r} \right) & -\sin\left( \frac{l}{r} \right) & 0 \\
+\sin\left( \frac{l}{r} \right) & \cos\left( \frac{l}{r} \right) & 0 \\
+0 & 0 & 1
+\end{bmatrix}-\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix} \right)}{2} \\
+=\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix} \label{lag_strain}
+\end{align}
+\begin{figure}[htbp]
+    \centering
+    \incfig{midplane}
+    \caption{The mid-plane represented by point $\mathbf{p}$}
+    \label{fig:midplane}
+\end{figure}
+Eqn (\ref{lag_strain}) tells us that there is no strain on the mid-plane after the deformation of the reference configuration. This makes sense because the mid-plane can be treated as the neutral axis passing through the centroid of the reference configuration. 
+\end{problem}

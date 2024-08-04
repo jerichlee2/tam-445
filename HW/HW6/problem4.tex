@@ -1,0 +1,24 @@
+\begin{problem}
+    \noindent
+    \normalfont
+
+    We can show that the deformation mapping Eqn (\ref{deform}) preserves planes by determining the change in surface area using the general point $\mathbf{p}=(a,b,c)$. Using Nanson's Formula (\ref{nanson}) for the general point $\mathbf{p}$:
+    \begin{align}
+    \hat{n'}=\mathbf{F}\hat{e}_{2}\times \mathbf{F}\hat{e}_{3}=\det \mathbf{F}F^{-T}\hat{n} \\
+    =\left( \frac{b+r}{r} \right)\left( \begin{bmatrix}
+    \left( -b+r \right)\cos\left( \frac{a}{r} \right)&-\frac{\left( -b+r \right)\sin\left( \frac{a}{r} \right)}{r} & 0 \\
+    \sin\left( \frac{a}{r} \right) & \cos\left( \frac{a}{r} \right) & 0 \\
+    0 & 0 & 1
+    \end{bmatrix} \right)\begin{bmatrix}
+    1 \\
+    0 \\
+    0
+    \end{bmatrix} \\
+    = \begin{bmatrix}
+    \frac{(b+r)^2\cos\left( \frac{a}{r} \right)}{r^2} \\
+    \frac{(b+r)\sin\left( \frac{a}{r} \right)}{r}
+    0
+    \end{bmatrix} \label{generalnanson}
+    \end{align}
+    
+    Eqn (\ref{generalnanson}) is only dependent upon two parameters, namely $a$ and $b$. Therefore, points on a surface in the reference configuration will remain on the same plane on the deformed configuration.\end{problem}

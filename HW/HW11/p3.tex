@@ -1,0 +1,160 @@
+\begin{problem}
+    \noindent
+    \normalfont
+
+    \begin{enumerate}
+        \item 
+        \begin{align}
+        \text{div}(\mathbf{T})=\frac{ \partial \mathbf{T}_{11} }{ \partial x_{1} }+ \frac{ \partial \mathbf{T}_{12} }{ \partial x_{2} }+\frac{ \partial \mathbf{T}_{13} }{ \partial x_{3} } \\
+        \mathbf{T}_{11}=-\frac{c}{a^2}(x_{1}^2-x_{2}^2),\ \mathbf{T}_{12}=\frac{c}{a^2}2x_{1}x_{2},\ \mathbf{T}_{13}=0 \\
+        \frac{ \partial \mathbf{T}_{11} }{ \partial x_{1} } =-\frac{c}{a^2}2x,\frac{ \partial \mathbf{T}_{12} }{ \partial x } =\frac{c}{a^2}(2x_{1}),\ \frac{ \partial \mathbf{T}_{13} }{ \partial x_{3} } =0 \\
+        \text{div}(\mathbf{T})_{1}=-\frac{2cx_{1}}{a^2}+\frac{2cx_{1}}{a^2} =0\\
+        \text{div}(\mathbf{T})_{2}=\frac{ \partial \mathbf{T}_{21} }{ \partial x_{1} } +\frac{ \partial \mathbf{T}_{22} }{ \partial x_{2} } +\frac{ \partial \mathbf{T}_{23} }{ \partial x_{3} }  \\
+        \mathbf{T}_{21}=\frac{c}{a^2}2x_{1}x_{2},\ \mathbf{T}_{22}=\frac{c}{a^2}(x_{1}^2-x_{2}^2),\ \mathbf{T}_{23}=0 \\
+        \text{div}(\mathbf{T})_{2}=-\frac{2cx_{2}}{a^2}+\frac{2cx_{2}}{a^2} =0\\
+        \text{div}(\mathbf{T})_{3}=\frac{ \partial \mathbf{T}_{31} }{ \partial x_{1} } +\frac{ \partial \mathbf{T}_{32} }{ \partial x_{2} }+\frac{ \partial \mathbf{T}_{33} }{ \partial x_{3} } \\
+        \mathbf{T}_{31}=0,\ \mathbf{T}_{32}=0, \ \mathbf{T}_{33}=0 \\
+        \frac{ \partial \mathbf{T}_{31} }{ \partial x_{1} }=0,\ \frac{ \partial \mathbf{T}_{32} }{ \partial x_{2} }  =0,\ \frac{ \partial \mathbf{T}_{33} }{ \partial x_{3} } =0 \\
+        \text{div}(\mathbf{T})=0 \\
+        \end{align}
+        \boxedeq{}{\text{div}(\mathbf{T})=\begin{bmatrix}
+            0 \\
+            0 \\
+            0
+            \end{bmatrix}}
+        \item Computing the traction for each face on the rectangular body:
+        
+        For the face that corresponds to \(x_{1}=a,\ x_{1}=-a  \):
+
+
+\begin{align}
+\mathbf{\hat{n}}=\begin{bmatrix}
+1,0,0
+\end{bmatrix} \ \text{for} \ x_{1}=a
+\end{align}
+
+\begin{align}
+\mathbf{\hat{n}}=\begin{bmatrix}
+-1,0,0
+\end{bmatrix} \ \text{for} \ x_{1}=-a
+\end{align}
+
+\boxedeq{}{t(1,0,0)=\frac{c}{a^2}\begin{bmatrix}
+    -(a^2-x_{2}^2) \\
+    2ax_{2} \\
+    0
+    \end{bmatrix} \\
+    t(-1,0,0)=\frac{c}{a^2}\begin{bmatrix}
+    a^2-x_{2}^2 \\
+    -2ax_{2} \\
+    0
+    \end{bmatrix}}
+
+
+        
+        For the face that corresponds to \(x_{2}=a,\ x_{2}=-a  \):
+
+
+\begin{align}
+\mathbf{\hat{n}}=\begin{bmatrix}
+0,1,0
+\end{bmatrix} \ \text{for} \ x_{2}=a
+\end{align}
+
+\begin{align}
+\mathbf{\hat{n}}=\begin{bmatrix}
+0,-1,0
+\end{bmatrix} \ \text{for} \ x_{2}=-a
+\end{align}
+
+\boxedeq{}{t(0,1,0)=\frac{c}{a^2}\begin{bmatrix}
+    2ax_{1} \\
+    x_{1}^2-a^2 \\
+    0
+    \end{bmatrix} \\
+    t(0,-1,0)=\frac{c}{a^2}\begin{bmatrix}
+    -2ax_{1} \\
+    -x_{1}^2+a^2 \\
+    0
+    \end{bmatrix}}
+
+
+For the face that corresponds to \(x_{3}=b,\ x_{3}=-b  \):
+
+\begin{align}
+\mathbf{\hat{n}}=\begin{bmatrix}
+0,0,1
+\end{bmatrix} \ \text{for} \ x_{3}=b
+\end{align}
+
+\begin{align}
+\mathbf{\hat{n}}=\begin{bmatrix}
+0,0,-1
+\end{bmatrix} \ \text{for} \ x_{3}=-b
+\end{align}
+
+\boxedeq{}{t(0,0,1)=\begin{bmatrix}
+    0 \\
+    0 \\
+    0
+    \end{bmatrix} \\
+    t(0,0,-1)=\begin{bmatrix}
+    0 \\
+    0 \\
+    0
+    \end{bmatrix}}
+
+\item 
+\begin{align}
+x_{1}^2+x_{2}^2+x_{3}^2=a^2, \ \hat{\mathbf{n}}=\left( \frac{x_{1}}{a}, \frac{x_{2}}{a}, \frac{x_{3}}{a} \right) \\
+\mathbf{T}=\frac{c}{a^2}\begin{bmatrix}
+-(x_{1}^2-x_{2}^2) & 2x_{1}x_{2} & 0 \\
+2x_{1}x_{2} & x^2_{1}-x_{2}^2 & 0 \\
+0 & 0 & 0
+\end{bmatrix} \\
+t(\mathbf{\hat{n}})=\mathbf{T}\cdot \begin{bmatrix}
+\frac{x_{1}}{a} \\
+\frac{x_{2}}{a} \\
+\frac{x_{3}}{a}
+\end{bmatrix} \\
+t(\mathbf{\hat{n}})=\frac{c}{a^3}\begin{bmatrix}
+-(x_{1}^2-x_{2}^2) & 2x_{1}x_{2} & 0 \\
+2x_{1}x_{2} & x^2_{1}-x_{2}^2 & 0 \\
+0 & 0 & 0
+\end{bmatrix}\begin{bmatrix}
+x_{1} \\
+x_{2} \\
+x_{3}
+\end{bmatrix} \\
+=\frac{c}{a^3}\begin{bmatrix}
+-(x_{1}^2-x_{2}^2)x_{1}+2x_{1}x_{2}x_{2} \\
+2x_{1}x_{2}x_{1}+(x_{1}^2+x_{2}^2)x_{2} \\
+0
+\end{bmatrix} \\
+\end{align}
+\boxedeq{}{t(\mathbf{\hat{n}})=\frac{c}{a^3}\begin{bmatrix}
+    -x^3_{1}+2x_{1}+x_{2}^2 \\
+    3x_{1}^2x_{2}-x_{2}^3 \\
+    0
+    \end{bmatrix}}
+
+    \item 
+    \begin{align}
+        \det(\mathbf{T}-\lambda \mathbf{I})=0 
+    \end{align}
+    \boxedeq{}{\lambda_{1}&=\frac{c(x_{1}^2+x_{2}^2)}{a^2} \\
+    \lambda_{2}&=0 \\
+    \lambda_{3}&=-\frac{c(x_{1}^2+x_{2}^2)}{a^2}
+}
+
+
+    \begin{align}
+    \tau_{\text{max}}=\frac{\lambda_{1}-\lambda_{3}}{2} \\
+    =\frac{\left( \frac{c(x_{1}^2+x_{2}^2)}{a^2}-\frac{-c(x_{1}^2+x_{2}^2)}{a^2} \right)}{2} \\
+    \end{align}
+    \boxedeq{}{\tau_{\text{max} } =\frac{c(x^2_{1}+x_{2}^2)}{a^2}}
+    
+    \end{enumerate}
+    
+\end{problem}
+\pagebreak

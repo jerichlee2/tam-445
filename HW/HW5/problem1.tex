@@ -1,0 +1,146 @@
+\begin{problem}
+    \noindent
+    \normalfont
+\end{problem}
+    \begin{enumerate}
+        \item $\nabla \mathbf{v}=\mathbf{I}$
+        \begin{proof}
+
+
+        
+        We begin by using the definition of the gradient of a vector field:
+        \begin{align}
+            \nabla \mathbf{v}=\frac{ \partial x_{i} }{ \partial x_{j} } \underline{e}_{i}\otimes \underline{e}_{j} \\
+            \mathbf{I} = \delta_{ij}\underline{e}_{i}\otimes \underline{e}_{j} \\
+            \end{align}
+        Applying the identity tensor to an arbitrary vector $\mathbf{u}$:
+        \begin{align}
+            \mathbf{I}\underline{u} = (\delta_{ij}\underline{e}_{i}\otimes \underline{e}_{j})\underline{u} \\
+            (\mathbf{I}\underline{u})_{i}=\mathbf{I}_{ij}u_{j} \label{eq:5} \\
+            (\delta_{ij}\underline{e}_{i}\otimes \underline{e}_{j})\underline{u}=\delta_{ij}(\underline{e}_{j}\cdot \underline{u})\underline{e}_{i} \\
+            =\delta_{ij}u_{j}\underline{e}_{i} \label{eq:7}
+        \end{align}
+
+        Using the definiton of the identity tensor and equating Eqns (\ref{eq:5}) and (\ref{eq:7}):
+        \begin{align}
+            \mathbf{I}_{ij}u_{j}=\delta_{ij}u_{j} \label{eq:8}
+            \end{align}
+
+        The identity tensor is equal to the Kronecker delta, as desired.
+        \end{proof}
+
+        \item $\nabla v=\frac{\mathbf{x}}{x}$
+        \begin{proof}
+                Using the given definition of $x$ and $v$:
+            \begin{align}
+                v(\mathbf{x})=(x_{i}x_{i})^{1/2}\label{eq:9}
+                \end{align}
+            Substituting Eqn (\ref{eq:9}) into the definition of the gradient of a scalar field:
+            \begin{align}
+                \frac{ \partial (x_{j}x_{j})^{1/2} }{ \partial x_{i} } =\frac{1}{2}(x_{j}x_{j})^{-1/2}\left( \frac{ \partial x_{j} }{ \partial x_{i} } x_{j} +\frac{ \partial x_{j} }{ \partial x_{i} } x_{j}\right) \\
+                =\frac{1}{2}(x_{j}x_{j})^{-1/2}\left( 2\frac{ \partial x_j }{ \partial x_{i} } x_{j} \right) \\
+                =\frac{\delta_{ij}x_{j}}{(x_{j}x_{j})^{1/2}} \\
+                =\frac{x_{i}}{(x_{j}x_{j})^{1/2}} \\
+            \end{align}
+        The RHS is equal to the RHS of the problem, as desired.
+        \end{proof}
+        \pagebreak
+        \item $\text{div}(\mathbf{v})=3$
+        \begin{proof}
+            \begin{align}
+                \text{div}(\mathbf{v})=\text{tr}(\nabla \mathbf{v}) \label{eq:15}\\
+                =\text{tr}(\mathbf{I}) \label{eq:16} \\
+                =3
+                \end{align}
+                Eqn (\ref{eq:16}) is implied by Eqn (\ref{eq:8}), and the trace of the identity is $3$, as desired.
+        \end{proof}
+        \item $\text{div}\left( \frac{\mathbf{v}}{v} \right)=\frac{2}{x}$
+        \begin{proof}
+            We begin by setting $\phi$ equal to the scalar field of the domain of the LHS of the given problem:
+            \begin{align}
+                \phi=\frac{1}{v} =\frac{1}{(v_{i}v_{i})^{1/2}} \label{eq:18}
+                \end{align}
+            Eqn (\ref{eq:18}) is substituted into the following identity:
+            \begin{align}
+                \text{div}(\phi \mathbf{v})=\phi \ \text{div}(\mathbf{v})+\mathbf{v}\cdot \nabla \phi\\
+                =\frac{1}{v}\text{tr}(\nabla \mathbf{v})+\mathbf{v}\cdot \left( \nabla \frac{1}{v} \right) \label{eq:20}
+            \end{align}
+            We observe the following statement from the given information:
+            \begin{align}
+                \lvert \mathbf{x} \rvert =(\mathbf{x}\cdot \mathbf{x})^{1/2} \label{eq:21} \\
+                =x \label{eq:22} \\
+                =v \label{eq:23}
+                \end{align}
+            Simplifying the first term of Eqn (\ref{eq:20}) using Eqns (\ref{eq:21}) through (\ref{eq:23}):
+                \begin{align}
+                    \frac{1}{v}\text{tr}(\mathbf{I}) =\frac{3}{x} \label{eq:24} 
+                    \end{align}
+            The term inside of the parentheses in the second term of Eqn (\ref{eq:20}) is simplified as follows:
+            \begin{align}
+                \nabla \frac{1}{v} \\
+                =\nabla (x_{i}x_{i})^{-1/2} \\
+                = \frac{ \partial (x_{j}x_{j})^{-1/2} }{ \partial x_{i} }  \\
+                =-\frac{1}{2}(x_{j}x_{j})^{-3/2}(\delta_{ij}x_{j}+\delta_{ij}x_{j}) \\
+                =-\frac{2\delta_{ij}x_{j}}{2(x_{j}x_{j})^{3/2}} \\
+                =-\frac{x_{i}}{(x_{j}x_{j})^{3/2}} \\
+                =-\frac{\mathbf{x}}{x^3} \label{eq:31}
+                \end{align}
+                Substituting Eqn (\ref{eq:31}) into the second term of Eqn (\ref{eq:20}):
+                \begin{align}
+                    \mathbf{x}\cdot\left( -\frac{\mathbf{x}}{x^3} \right) \\
+                    =\frac{1}{x^3}(\mathbf{x}\cdot \mathbf{x}) \\
+                    =-\frac{1}{x^3}(x^2) \\
+                    =-\frac{1}{x} \label{eq:36}
+                    \end{align}
+            
+            Substituting Eqns (\ref{eq:36}) and (\ref{eq:24}) into Eqn (\ref{eq:20}):
+            \begin{align}
+                \frac{3}{x}+\mathbf{x}\cdot\left( -\frac{\mathbf{x}}{x^3} \right) \\
+                =\frac{2}{x}
+                \end{align}
+        \end{proof}
+        \item $\text{div}(\mathbf{v}\otimes \mathbf{v})=4x$
+        \begin{proof}
+            Using the following identity:
+            \begin{align}
+                \text{div}(\mathbf{v}\otimes \mathbf{v})=\mathbf{v}(\text{div}(\mathbf{v}))+(\nabla \mathbf{v})\mathbf{v}
+                \end{align}
+            Simplifying:
+            \begin{align} \\
+                \mathbf{v}(\text{div}(\mathbf{v}))+(\nabla \mathbf{v})\mathbf{v} =
+                3\mathbf{v}+I\mathbf{v} \\
+                =4\mathbf{v} \\
+                =4\mathbf{x}
+                \end{align}
+        \end{proof}
+        \pagebreak
+        \item $\text{curl}(\mathbf{v})=\mathbf{0}$
+        \begin{proof}
+            We start with the definition of the curl of a vector in indicial notation:
+            \begin{align}
+                \text{curl}(\mathbf{v})=\epsilon_{kji}\frac{ \partial v_{i} }{ \partial x_{j} } e_{k} \label{eq:43}
+                \end{align}
+            Using Eqn (\ref{eq:21}), Eqn (\ref{eq:43}) is simplified as follows:
+            \begin{align}
+                =\epsilon_{kji}\frac{ \partial v_{i} }{ \partial x_{j} } e_{k} \\
+                =\epsilon_{kji}\delta_{ij}e_{k} \\
+                =\epsilon_{kii}e_{k} \\
+                =\mathbf{0} \label{eq:47}
+                \end{align}
+        \end{proof}
+        \item $\text{curl}\left( \frac{\mathbf{v}}{v} \right)=\mathbf{0}$
+        \begin{proof}
+            Setting $\phi=\frac{1}{v}$, using the identity of the curl of a scalar field multiplied by a vector field, and Eqn (\ref{eq:47}):
+            \begin{align}
+            \frac{1}{v}=\phi \\
+            =\underbrace{ \cancel{ \phi \ \text{curl}(\mathbf{v}) } }_{ 0 }+\nabla \phi \times \mathbf{v}\label{eq:49}
+            \end{align}
+            Substituting Eqn (\ref{eq:31}) into Eqn (\ref{eq:49}):
+            \begin{align}
+            =-\left( \frac{1}{x^3} \right)\underbrace{ \cancel{ \mathbf{x}\times \mathbf{x} } }_{ 0 } \\
+            =\mathbf{0}
+            \end{align}
+
+        \end{proof}
+    \end{enumerate}
+   \pagebreak 
